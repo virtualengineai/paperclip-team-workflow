@@ -1,5 +1,8 @@
 import { getDashboard, Agent, Issue } from "@/lib/paperclip";
 
+// Prevent static generation — data is fetched at request time
+export const dynamic = "force-dynamic";
+
 const STATUS_COLORS: Record<string, string> = {
   active: "bg-green-500",
   idle: "bg-yellow-500",

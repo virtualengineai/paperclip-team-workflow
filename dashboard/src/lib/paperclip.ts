@@ -8,7 +8,7 @@ async function apiFetch(path: string) {
       Authorization: `Bearer ${API_KEY}`,
       "Content-Type": "application/json",
     },
-    next: { revalidate: 10 },
+    cache: "no-store",
   });
   if (!res.ok) throw new Error(`API ${path}: ${res.status}`);
   return res.json();
